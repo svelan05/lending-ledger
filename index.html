@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ledger — Money Lending</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>₹</text></svg>" />
+</head>
+<body>
+  <div class="app">
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="mark">₹</div>
+        <div>
+          <strong>Ledger</strong>
+          <span>Lending books</span>
+        </div>
+      </div>
+      <nav>
+        <button data-view="dashboard" class="active">Dashboard</button>
+        <button data-view="borrowers">Borrowers</button>
+        <button data-view="loans">Loans</button>
+        <button data-view="collect">Collect</button>
+        <button data-view="expenses">Expenses</button>
+        <button data-view="reports">Reports</button>
+      </nav>
+      <div class="side-actions">
+        <button id="exportBtn" class="ghost">Export backup</button>
+        <button id="importBtn" class="ghost">Import backup</button>
+        <input id="importFile" type="file" accept="application/json" hidden />
+        <p class="hint">Data stays in this browser. Export often.</p>
+      </div>
+    </aside>
+
+    <main>
+      <header class="topbar">
+        <div>
+          <h1 id="viewTitle">Dashboard</h1>
+          <p id="viewSub">Portfolio, collections, and costs</p>
+        </div>
+        <div class="biz" id="bizNameWrap">
+          <input id="bizName" placeholder="Business name" />
+        </div>
+      </header>
+      <section id="view"></section>
+    </main>
+  </div>
+
+  <dialog id="modal">
+    <form id="modalForm" method="dialog">
+      <h2 id="modalTitle"></h2>
+      <div id="modalBody"></div>
+      <div class="modal-actions">
+        <button type="button" id="modalCancel" class="ghost">Cancel</button>
+        <button type="submit" class="primary" id="modalSave">Save</button>
+      </div>
+    </form>
+  </dialog>
+
+  <script src="app.js"></script>
+</body>
+</html>
